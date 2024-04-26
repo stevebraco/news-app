@@ -1,33 +1,41 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
+  @tailwind components;
+  @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+  @layer utilities {
+    .container {
+      @apply max-w-screen-xl mx-auto 
+    }
+    .flex-center {
+      @apply flex justify-center items-center;
+    }
+    .flex-between {
+      @apply flex justify-between items-center;
+    }
+    .text-xs_primary {
+      @apply text-sm text-primary-100 font-bold;
+    }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    .text_primary {
+      @apply text-base text-primary-100 font-bold;
+    }
+   
+    .text-xs_secondary {
+      @apply text-sm text-primary-200;
+    }
+
+    .text-xs_t {
+      @apply text-sm text-primary-300;
+    }
+
+    .h3-title {
+      @apply text-[16px] font-bold tracking-wider
+    }
+
+    .card-gradient {
+      @apply after:content-[''] after:w-full after:h-full after:bg-gradient-to-t after:from-[#000000cc] after:to-transparent after:absolute after:top-0
+    }
+    .card-img {
+      @apply absolute top-0 bottom-0
+    }
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
